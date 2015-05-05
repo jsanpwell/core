@@ -113,7 +113,7 @@ class Controller {
 			$recoveryEnabledForUser = false;
 			if ($recoveryAdminEnabled) {
 				$validRecoveryPassword = $keyManager->checkRecoveryPassword($recoveryPassword);
-				$recoveryEnabledForUser = $recovery->isRecoveryEnabledForUser();
+				$recoveryEnabledForUser = $recovery->isRecoveryEnabledForUser($username);
 			}
 
 			if ($recoveryEnabledForUser && $recoveryPassword === '') {
