@@ -284,7 +284,7 @@ class LDAP implements ILDAPWrapper {
 				} else if ($errorCode === 10) {
 					//referrals, we switch them off, but then there is AD :)
 				} else if ($errorCode === 48) {
-					throw new \Exception('LDAP authentication method rejected');
+					throw new \Exception('LDAP authentication method rejected', $errorCode);
 				} else if ($errorCode === 1) {
 					throw new \Exception('LDAP Operations error', $errorCode);
 				} else {
